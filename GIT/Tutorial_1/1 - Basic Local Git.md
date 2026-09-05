@@ -1,3 +1,4 @@
+## **What is GIT?**
 When I first started coding and making larger projects on my computer, I used to save everything in a folder.
 Every new version/major improvement I made, I saved in a new folder labelled project_v2 or v3 something of the sort.
 And so it kept growing - project_v7, project_final, project_real_final, project_FINAL_final_final
@@ -21,6 +22,7 @@ So if we were to make some software to solve these problems, this is what we wou
 Git was made as this solution and implements this very well .
 Let's take a look at how git implements this and how to use git for this .
 
+## **Git structure and workflow**
 Git is structured such that it has 3 main stages you should care about :
 ### *The Working Directory*
 Your working directory is the directory in which you have all the files of your projects. 
@@ -35,8 +37,6 @@ It contains all the information on the graph we talked about before and all of t
 The staging area acts as a place to organise and plan our next commit.
 It is the bridge between your working directory and repository,
 While not necessarily needed, it helps us a lot in keeping things organised and handling our project easily
-
-###
 So our workflow is basically
 Make changes in our working directory -> 
 Add the parts we want to commit to the staging area -> 
@@ -46,6 +46,7 @@ Commit the new snapshot to our repository
 Let's start learning how it works by making a project and using it.
 I'll be using bash to create folders and files, feel free to use your file manager/explorer instead. I'll be assuming that you're using bash for the git commands anyways so it might be easy enough to follow my commands to do everything in bash rather than switch between the two.
 
+## **Initialising a repo**
 For our project, i'm going to write a blog in a txt file.
 
 ```bash
@@ -111,6 +112,7 @@ If anyone is interested in learning more about how it works, I would suggest lea
 
 Let's get back to using git.
 
+## **Staging, Commiting, and Status**
 Let us check the status of our repo.
 When I say repo I'm referring to the graph of commits and all the data of all commits.
 
@@ -175,6 +177,8 @@ git log --graph --oneline --all --decorate
 * bb40d65 (HEAD -> master) My first blog
 ```
 Only one node because we only made one commit now.
+The code you see there - "bb40d65" in this case is the Hash of the commit.
+Basically, it is a unique identifier for this commit. You could say that that code "bb40d65" is the ID number of this commit.
 
 I want you guys to make 2 more commits now, testing this out -
 1) Make some changes to your blog, add it to the staging area, change the blog again but dont stage it, and make a commit with  a message about what you did.
@@ -204,6 +208,7 @@ git log --graph --oneline --all --decorate
 
 Okay we have something : a linear timeline made of 3 distinct nodes in our graph.
 
+## **Linear Navigation**
 Now lets learn how to navigate between the 3 commits we made.
 Use the command checkout to go to your first, original commit.
 
@@ -250,6 +255,8 @@ echo "Change no 3" >> blog2.txt
 git checkout -f bb40d65
 ```
 
+
+## **Stash**
 Now in the warning you saw, what did it tell you to do?
 It said either commit your changes or stash them.
 Let us look at stash.
@@ -263,7 +270,48 @@ git stash
 ```bash
 git stash list
 ```
+Checkout to an old commit.
+Don't change anything.
+then come back to the latest commit and check if your changes are there.
+They won't be there.
+Use stash pop, and your changes are back.
 ```bash
 git stash pop
 ```
+## **Restore**
+Now there might be times where you've recently made some changes you want to undo.
+Let's make a new commit.
+Add some text to your blog 1, save and stage it.
+Now add some nonsense to blog1.
+If you want to restore your blog1 to what you had staged, you can run 
+
+```bash
+git restore blog1.txt
+```
+
+This will restore blog1 to what you had staged.
+If you want to get rid of what you had staged as well in blog1, you can run
+
+```bash
+git restore --staged blog1.txt
+```
+
+Check your text file and see what changed.
+
+## **Revision**
+Lets revise what we did so fat.
+Git has 3 stages - The working directory, Staging area and Repository.
+We learnt how to initiralise, stage, commit, check graph and status, navigate linear commits, stash and restore.
+Take 5 minutes and do this to revise it.
+Make a new folder outside this directory.
+1) Create a text file and initialise a git repo in your directory.
+2) Write something, stage and commit it.
+3) Write something else, stage and commit again.
+4) Write something else, do not stage, stash it, check stash list to see whats in stash.
+5) Navigate to your first commit using checkout , then navigate back to the latest commit.
+6) Pop stash and stage the changes without commiting.
+7) Write something in the text file and do not stage it
+8) Restore the text file to whats in the staging area
+9) Restore the staging area to discard the uncommited changes to that file
+10) Check what changes have happened and trace in your mind what every command has done
 
