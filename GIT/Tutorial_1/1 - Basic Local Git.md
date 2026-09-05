@@ -391,8 +391,8 @@ Take 5 minutes and do this to revise it.
 Make a new folder outside this directory.
 1) Create a text file and initialise a git repo in your directory.
 2) Write something, stage and commit it.
-3) Write something else, stage and commit again.
-4) Add a new file and add its name to your gitignore file.
+3) Add a new file and add its name to your gitignore file.
+4) Write something else, stage and commit again.
 5) Write something else, do not stage, stash it, check stash list to see whats in stash.
 6) Navigate to your first commit using checkout , then navigate back to the latest commit.
 7) Pop stash and stage the changes without commiting.
