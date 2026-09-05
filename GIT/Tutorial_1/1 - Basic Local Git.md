@@ -278,7 +278,7 @@ Use stash pop, and your changes are back.
 ```bash
 git stash pop
 ```
-## **Restore**
+## **Restores and Undos**
 Now there might be times where you've recently made some changes you want to undo.
 Let's make a new commit.
 Add some text to your blog 1, save and stage it.
@@ -298,6 +298,91 @@ git restore --staged blog1.txt
 
 Check your text file and see what changed.
 
+That works for when theres a mistake in your workind directory or staging area,but for when you make a mistake in your commit and want to undo it, or want to update 1 or 2 lines without having to make a whole new commit there are a few other commands.
+
+```bash
+git commit --amend
+```
+This works by commiting any files you forgot to add or update previously. It makes the changes in the most recent commit itself and doesn't create a new one.
+
+Let's try it on our blog.
+Add a new line in blog1 and stage it.
+Then use the amend command.
+```bash
+echo "One last line I forgot to include" >> blog1.txt
+git add blog1.txt
+git commit --amend --no-edit
+```
+The `--no-edit` flag tells Git to keep your existing commit message while updating its contents.
+You can also use it to change the commit message using `-m` instead.
+
+If you made a commit you want to undo, you can use `git reset`
+The reset command Rewinds the last commit, while keeping or wiping your working directory and staging area depending on the argument you give.
+All of them rewind your commit to the commit which's hash you provide.
+
+```bash
+git reset --soft <hash>
+```
+Keeps working directory and staging area preserved
+
+```bash
+git reset --mixed <hash>
+```
+Wipes staging area
+
+```bash
+git reset --hard <hash>
+```
+Wipes both working directory and staging area
+
+You can replace the hash with HEAD~N to go N commits backwards.
+reset defaults to mixed reset.
+
+Let us go one commit backward
+```bash
+git reset HEAD~1
+```
+
+Now check your graph and files.
+What happened?
+Your files are saved but your latest commit is erased.
+So our working directory has unsaved changed.
+Let's amend the latest commit to include our changes and have another message.
+
+```bash
+git add .
+git commit --amend -m "Amending"
+```
+
+
+## **Ignoring Files**
+Sometimes you have files in your folder which you dont want to commit.
+Could be local environment variables, crash reports, logs, etc.
+All the things we don't want to track, we add in the .gitignore file
+Let's make some files we don't want to commit.
+
+```bash
+echo "Secret_Key=SuperSecret" >> .env
+echo "Error at 10:00 AM" >> server.log
+```
+```bash
+git status
+```
+You see that it shows as untracked files.
+Let's add them to the .gitignore file.
+```bash
+echo ".env" >> .gitignore
+echo "server.log" >> .gitignore
+```
+```bash
+git status
+```
+We include the .gitignore file in our next commit
+
+```bash
+git add .
+git commit -m "Added gitignore"
+```
 ## **Revision** and Exercise
 Lets revise what we did so fat.
 Git has 3 stages - The working directory, Staging area and Repository.
@@ -307,11 +392,13 @@ Make a new folder outside this directory.
 1) Create a text file and initialise a git repo in your directory.
 2) Write something, stage and commit it.
 3) Write something else, stage and commit again.
-4) Write something else, do not stage, stash it, check stash list to see whats in stash.
-5) Navigate to your first commit using checkout , then navigate back to the latest commit.
-6) Pop stash and stage the changes without commiting.
-7) Write something in the text file and do not stage it
-8) Restore the text file to whats in the staging area
-9) Restore the staging area to discard the uncommited changes to that file
-10) Check what changes have happened and trace in your mind what every command has done
-
+4) Add a new file and add its name to your gitignore file.
+5) Write something else, do not stage, stash it, check stash list to see whats in stash.
+6) Navigate to your first commit using checkout , then navigate back to the latest commit.
+7) Pop stash and stage the changes without commiting.
+8) Write something in the text file and do not stage it.
+9) Restore the text file to whats in the staging area.
+10) Restore the staging area to discard the uncommited changes to that file.
+11) Amend your latest commit with a new, different message.
+12) Mixed reset to your last commit.
+13) Check what changes have happened and trace in your mind what every command has done.
