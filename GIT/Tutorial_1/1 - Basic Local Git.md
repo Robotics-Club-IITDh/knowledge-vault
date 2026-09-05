@@ -298,7 +298,7 @@ git restore --staged blog1.txt
 
 Check your text file and see what changed.
 
-## **Revision**
+## **Revision** and Exercise
 Lets revise what we did so fat.
 Git has 3 stages - The working directory, Staging area and Repository.
 We learnt how to initiralise, stage, commit, check graph and status, navigate linear commits, stash and restore.
