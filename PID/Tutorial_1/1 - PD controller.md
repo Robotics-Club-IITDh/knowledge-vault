@@ -1,9 +1,9 @@
 Let us start with a problem. 
 We have a DC motor. Geared, low rpm, high rpm - doesn't matter.
 There's a shaft connected to this motor and a rod which spins with it like so 
-	![[Tutorial_1_Image_1.png|300]]
+	![[1_Image_1.png|300]]
 Now we have to rotate it to a certain position. Let us say that that the rod (looking at it straight down) starts at 0 degrees, and needs to move to the target 90 degrees
-	![[Tutorial_1_Image_2.png|300]]
+	![[1_Image_2.png|300]]
 
 This is what we know about the system :
 - We can provide any voltage in the range of +12 to -12 to the motor, which corresponds to torque in the Anticlockwise and Clockwise direction respectively. The torque provided is proportional to the voltage provided.
@@ -71,7 +71,7 @@ plt.show()
 ```
 
 Well did that work? 
-![[Tutorial_1_Image_3.png|659]]
+![[1_Image_3.png|659]]
 Ehh.. It reached 90 degrees at some point, but the joint kept moving even past it, because we had no stopping acceleration.
 Okay so we need to improve this or go a different route. 
 I can think of a version where this works by setting the timing for starting and stopping acceleration perfectly. 
@@ -93,7 +93,7 @@ def compute_motor_voltage(current_angle, time_elapsed):
 ```
 And if we run it now and increase the simulation time, does that work?
 
-![[Tutorial_1_Image_4.png|686]]
+![[1_Image_4.png|686]]
 Eh... again. 
 Now it at least seems to have some direction of where its supposed to be, oscillating about that point but the oscillations are way too big to serve any purpose where we would need 90 degrees.
 Take a minute to think about what the problem could be, and then move on.
@@ -128,7 +128,7 @@ def compute_motor_voltage(current_angle, time_elapsed):
 ```
 Okay.. did that work?
 
-![[Tutorial_1_Image_6.png]]
+![[1_Image_6.png]]
 
 Wow. Wonderful. Whatta beauty.
 Yes, it works.
@@ -142,7 +142,7 @@ The greater the value of Kd, the longer it takes to get to the desired output an
 The greater the value of the p_voltage multiplier, the faster it gets to the desired output but the longer it takes to settle down.
 
 Here is a run with them set to 0.2 and 8
-![[Tutorial_1_Image_7.png]]
+![[1_Image_7.png]]
 Pretty decent run. 
 However here we see the oscillations more.
 Is there any way we can minimize them? Take a minute to think about why it oscillates in the first place and how we could fix it.
@@ -171,7 +171,7 @@ def compute_motor_voltage(current_angle, time_elapsed):
     return voltage
 ```
 
-![[Tutorial_1_Image_8.png]]
+![[1_Image_8.png]]
 Woah okay. That seems to be miles better.
 
 It works. It's great. We are so smart fr.
