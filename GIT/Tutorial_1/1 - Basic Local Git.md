@@ -58,7 +58,8 @@ echo "Hi my name is tushar" >> blog1.txt
 Now that my blog is made let's check what's in the folder.
 ```bash
 ls -a
-
+```
+```bash
 .  ..  blog1.txt
 ```
 
@@ -68,7 +69,8 @@ Now lets initialise git and see what changes.
 ```bash
 git init
 ls -a
-
+```
+```bash
 .  ..  blog1.txt  .git
 ```
 
@@ -77,7 +79,8 @@ Lets take a look inside .git.
 
 ```bash
 ls -a .git
-
+```
+```bash
 .  ..  
 branches  
 config  
@@ -113,7 +116,8 @@ When I say repo I'm referring to the graph of commits and all the data of all co
 
 ```bash
 git status
-
+```
+```bash
 On branch master
 
 No commits yet
@@ -147,14 +151,16 @@ Adding a file will only update its copy in the staging area, changing it from th
 We still haven't made a commit, so let's make a commit and check our status.
 ```bash
 git commit -m "My first blog"
-
+```
+```bash
 [master (root-commit) bb40d65] My first blog
  1 file changed, 1 insertion(+)
  create mode 100644 blog1.txt
 ```
 ```bash
 git status
-
+```
+```bash
 On branch master
 nothing to commit, working tree clean
 ```
@@ -164,7 +170,8 @@ We can look at the graph using
 
 ```bash
 git log --graph --oneline --all --decorate
-
+```
+```bash
 * bb40d65 (HEAD -> master) My first blog
 ```
 Only one node because we only made one commit now.
@@ -178,8 +185,9 @@ echo "Today I learned about Git staging and commits." >> blog1.txt
 git add blog1.txt
 echo "This line is NOT staged yet!" >> blog1.txt
 git commit -m "Add second entry to blog1"
-
-echo "My second blog post about terminal commands." > blog2.txt
+```
+```bash
+echo "My second blog post about terminal commands." >> blog2.txt
 git add .
 git commit -m "Add blog2 and finalize edits"
 ```
@@ -187,7 +195,8 @@ This is what I ran.
 Checking our graph,
 ```bash
 git log --graph --oneline --all --decorate
-
+```
+```bash
 * 1fa68c4 (HEAD -> master) Add blog 2
 * e6f7f4f Add second entry to blog1
 * bb40d65 My first blog
@@ -245,4 +254,16 @@ Now in the warning you saw, what did it tell you to do?
 It said either commit your changes or stash them.
 Let us look at stash.
 Stash is a temporary storage for your working directory.
-If you have any unsaved changes you dont want to lose, or want to move those unsaved changes from one commit to another
+If you have any unsaved changes you dont want to lose.
+
+Lets try. Make some changes, and dont stage them.
+```bash
+git stash
+```
+```bash
+git stash list
+```
+```bash
+git stash pop
+```
+
