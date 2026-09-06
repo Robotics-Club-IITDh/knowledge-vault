@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GIT/Tutorial_1/2 - Branches and Merging.md",
+                "file": "GIT/Tutorial_1/1 - Basic Local Git.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2 - Branches and Merging"
+              "title": "1 - Basic Local Git"
             }
           }
         ]
@@ -190,6 +190,7 @@
   },
   "active": "415ab02f9a10ecbc",
   "lastOpenFiles": [
+    "GIT/Tutorial_1/3 - Remotes and Github.md",
     "GIT/Tutorial_1/1 - Basic Local Git.md",
     "GIT/Tutorial_1/2 - Branches and Merging.md",
     "GIT/Command_Sheet/Command Sheet.md",

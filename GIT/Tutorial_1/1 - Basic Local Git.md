@@ -47,6 +47,9 @@ Let's start learning how it works by making a project and using it.
 I'll be using bash to create folders and files, feel free to use your file manager/explorer instead. I'll be assuming that you're using bash for the git commands anyways so it might be easy enough to follow my commands to do everything in bash rather than switch between the two.
 
 ## **Initialising a repo**
+What is a repository?
+A repository is the graph/map of your complete history.
+Every time you take a snapshot of your project, it is added to the repository.
 For our project, i'm going to write a blog in a txt file.
 
 ```bash
