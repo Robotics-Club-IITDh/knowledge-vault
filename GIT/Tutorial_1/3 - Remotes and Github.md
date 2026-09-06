@@ -24,6 +24,14 @@ You can also make GitHub Pages sites out of other, normal repos for individual p
 
 We're going to use this as our example for the rest of this session to learn branching, merging and remotes. Think of it like blog2.0 - same idea as before, except now its an actual website, and now other people (like the person sitting next to you) can work on it too.
 
+
+## **Github CLI**
+Github cli is a command line tool to connect your local machine to github.
+Using gh cli, you can sign into your account and get all the permissions you have on github all on your command line. 
+You can upload the whole repo on your laptop onto github with a single command.
+There are others ways to do it, without the Github cli (such as SSH or PATs) but this is the easiest and most simple in this case, so let's use this.
+
+
 ## **Setting up our page**
 Go to GitHub, and make a new repository.
 Name it `<your-username>.github.io`, replacing it with your actual username. So if your username was 'tushar123', you'd name the repo 'tushar123.github.io'.

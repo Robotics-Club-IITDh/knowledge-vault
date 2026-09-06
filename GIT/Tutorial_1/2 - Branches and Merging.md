@@ -248,6 +248,11 @@ git rebase --continue
 ```
 I will not go through merge conflicts again because you fix them the same way we did while merging
 
+
+## **Note**
+There are still a bunch of things not covered - a couple of other ways to merge, undoing a rebase, checking differences between commits, etc. But this should cover the basics of local git
+
+
 ## **Revision and Exercise**
 So all in all, we learnt how to create and use branches, how to merge, how to rebase, and how to resolve merge conflicts.
 In the current directory, do these steps :
