@@ -149,6 +149,20 @@ git add .
 The staging area is basically a blueprint of what you want your next commit to look like.
 Adding the same file twice to the staging area wont duplicate it there. 
 Adding a file will only update its copy in the staging area, changing it from the copy we had when we last added it.
+If you stage a file, then delete it, its non deleted version is still being tracked. So you have to stage the delete by using add
+```bash
+rm filename.ext
+git add filename.ext
+```
+or you could use gits command to do both together
+```bash
+git rm filename.ext
+```
+if you want to remove a file from the staging area but want to keep it in your local directory, you can use
+```bash
+git rm --cached filename.ext
+```
+~~mv command also~~
 
 We still haven't made a commit, so let's make a commit and check our status.
 ```bash
@@ -383,6 +397,12 @@ We include the .gitignore file in our next commit
 git add .
 git commit -m "Added gitignore"
 ```
+
+Note : Gitignore only ignores untracked files. If any of your files were already added before adding them to gitignore, git will continue to track them.
+You can stop them from being tracked after they were added by using 
+```bash
+git rm --cached .env
+```
 ## **Revision** and Exercise
 Lets revise what we did so fat.
 Git has 3 stages - The working directory, Staging area and Repository.
@@ -394,11 +414,12 @@ Make a new folder outside this directory.
 3) Add a new file and add its name to your gitignore file.
 4) Write something else, stage and commit again.
 5) Write something else, do not stage, stash it, check stash list to see whats in stash.
-6) Navigate to your first commit using checkout , then navigate back to the latest commit.
-7) Pop stash and stage the changes without commiting.
-8) Write something in the text file and do not stage it.
-9) Restore the text file to whats in the staging area.
-10) Restore the staging area to discard the uncommited changes to that file.
-11) Amend your latest commit with a new, different message.
-12) Mixed reset to your last commit.
-13) Check what changes have happened and trace in your mind what every command has done.
+6) Use the log command to see your commit graph and note down the hash of your first commit.
+7) Navigate to your first commit using checkout , then navigate back to the latest commit.
+8) Pop stash and stage the changes without commiting.
+9) Write something in the text file and do not stage it.
+10) Restore the text file to whats in the staging area.
+11) Restore the staging area to discard the uncommited changes to that file.
+12) Amend your latest commit with a new, different message.
+13) Mixed reset to your last commit.
+14) Check what changes have happened and trace in your mind what every command has done.
