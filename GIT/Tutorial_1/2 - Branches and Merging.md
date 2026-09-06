@@ -249,6 +249,7 @@ git rebase --continue
 I will not go through merge conflicts again because you fix them the same way we did while merging
 
 ## **Revision and Exercise**
+So all in all, we learnt how to create and use branches, how to merge, how to rebase, and how to resolve merge conflicts.
 In the current directory, do these steps :
 1) Make sure you are on the master branch
 2) Create and switch to a new branch "b1b1"
