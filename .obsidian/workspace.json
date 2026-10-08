@@ -11,14 +11,10 @@
             "id": "415ab02f9a10ecbc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Private & Shared/ROS2/Introduction and Why We Need ROS.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Introduction and Why We Need ROS"
+              "title": "New tab"
             }
           }
         ]
@@ -190,13 +186,28 @@
   },
   "active": "415ab02f9a10ecbc",
   "lastOpenFiles": [
+    "Private & Shared/ROS2/Introduction and Why We Need ROS.md",
+    "ROS2/ROS2/Installation Guide/Useful things/apt-fast installation + etc.md",
+    "ROS2/ROS2/Installation Guide/Useful things/The apt tool, dpkg tool, and general installation.md",
+    "ROS2/ROS2/Installation Guide/Useful things/DONT LEARN this list of important things to learn.md",
+    "ROS2/ROS2/Installation Guide/Useful things.md",
+    "ROS2/ROS2/Installation Guide/Useful things",
+    "ROS2/ROS2/Installation Guide/Ubuntu Installation Guide.md",
+    "ROS2/ROS2/Installation Guide/ROS2 Installation Guide.md",
+    "ROS2/ROS2/Installation Guide/Installation Guide.md",
+    "ROS2/ROS2/Introduction and Why We Need ROS.md",
+    "ROS2/ROS2/Installation Guide",
+    "ROS2/ROS2/Getting Started - Workspaces and Packages.md",
+    "ROS2/ROS2/First Node.md",
+    "ROS2/ROS2 Index.md",
+    "ROS2/ROS2",
+    "ROS2",
     "Private & Shared/ROS2/Getting Started - Workspaces and Packages.md",
     "Private & Shared/ROS2/Installation Guide/Installation Guide.md",
     "README.md",
     "robotics_competition_timeline.md",
     "PID/Tutorial_1/1 - PD controller.md",
     "Private & Shared/ROS2 Index.md",
-    "Private & Shared/ROS2/Introduction and Why We Need ROS.md",
     "Private & Shared/ROS2/Installation Guide/Useful things.md",
     "Private & Shared/ROS2/Installation Guide/ROS2 Installation Guide.md",
     "Private & Shared/ROS2/Installation Guide/Ubuntu Installation Guide.md",
@@ -212,13 +223,7 @@
     "Private & Shared/ROS2/Getting Started - Workspaces and Packages",
     "Private & Shared/ROS2",
     "Private & Shared",
-    "ROS2",
-    "GIT/Tutorial_1/3 - Remotes and Github.md",
-    "GIT/Tutorial_1/1 - Basic Local Git.md",
-    "GIT/Tutorial_1/2 - Branches and Merging.md",
-    "GIT/Tutorial_1/Version Control Systems.md",
     "PID/Tutorial_1/Images/1_Image_2.png",
-    "PID/Tutorial_1/Images/1_Image_1.png",
-    "GIT/Tutorial_1"
+    "PID/Tutorial_1/Images/1_Image_1.png"
   ]
 }
